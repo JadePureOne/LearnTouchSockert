@@ -5,6 +5,10 @@ VisualStudioVersion = 17.14.36327.8 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcpClientConsoleApp", "TcpClientConsoleApp\TcpClientConsoleApp.csproj", "{13B3FAC8-1AC8-4288-ABB3-354922EF348F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决方案项", "{9FA3D6BD-1EC1-3BA5-80CB-CE02773A58D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCP.ClassLibrary", "..\TcpServerConsoleApp\TCP.ClassLibrary\TCP.ClassLibrary.csproj", "{69806420-F332-2B20-8811-EE2E7C9ED5D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,10 @@ Global
 		{13B3FAC8-1AC8-4288-ABB3-354922EF348F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13B3FAC8-1AC8-4288-ABB3-354922EF348F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13B3FAC8-1AC8-4288-ABB3-354922EF348F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69806420-F332-2B20-8811-EE2E7C9ED5D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69806420-F332-2B20-8811-EE2E7C9ED5D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69806420-F332-2B20-8811-EE2E7C9ED5D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69806420-F332-2B20-8811-EE2E7C9ED5D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

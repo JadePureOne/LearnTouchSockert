@@ -9,4 +9,7 @@
 	<ItemGroup>
 		<PackageReference Include="TouchSocket" Version="3.1.16" />
 	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\TcpServerConsoleApp\TCP.ClassLibrary\TCP.ClassLibrary.csproj" />
+	</ItemGroup>
 </Project>
