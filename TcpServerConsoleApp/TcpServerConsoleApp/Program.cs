@@ -12,7 +12,10 @@ await tcpService.SetupAsync(new TouchSocketConfig()//配置
     })
     .ConfigurePlugins(p =>
     {
-        p.Add<MyTcpPlugin>();
+        //插件的添加顺序会影响执行顺序，先添加的先执行。
+        //p.Add<MyTcpPlugin>();
+        p.Add<MyTcpHelloPlugin>();
+        p.Add<MyTcpHiPlugin>();
 
         #region 注册的三种方式
 
