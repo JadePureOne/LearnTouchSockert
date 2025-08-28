@@ -38,9 +38,29 @@ tcpService.Closed = (client, e) =>
 
 await tcpService.SetupAsync(new TouchSocketConfig()//配置
     .SetListenIPHosts("127.0.0.1:7789")
-    .ConfigurePlugins(pluginManager =>
+    .ConfigureContainer(c =>
     {
-        pluginManager.Add<MyTcpPlugin>();//添加自定义插件
+        c.AddConsoleLogger();//添加日志服务
+    })
+    .ConfigurePlugins(p =>
+    {
+        p.Add<MyTcpPlugin>();//泛型注册，可以拿到容器内的东西
+        p.Add(new MyTcpPlugin(null)
+        {
+            Count = 5
+        }); //直接注册实例,可以传参
+
+        //也可以这样委托注册
+        //1。完整写法
+        p.Add(typeof(ITcpReceivedPlugin), async (ITcpSession client, ReceivedDataEventArgs e) =>
+        {
+            await e.InvokeNext();
+        });
+        //2。简化写法
+        p.AddTcpReceivedPlugin(async (ITcpSession client, ReceivedDataEventArgs e) =>
+        {
+            await e.InvokeNext();
+        });
     }));
 
 await tcpService.StartAsync();
